@@ -1,0 +1,22 @@
+/* Custom styles for the avatar */
+.avatar-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 30%; /* Làm cho ảnh có hình tròn */
+    display: inline-block;
+    position: relative;
+    border: 5px solid  #28a745 !important; /* Thêm khung viền màu xanh (hoặc màu bạn muốn) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ xung quanh khung */
+    background-color: white; /* Thêm nền trắng để khung nổi bật hơn */
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh có tỉ lệ 1:1 và không bị méo */
+}
+
+input[type="file"] {
+    display: none; /* Ẩn input file */
+}
