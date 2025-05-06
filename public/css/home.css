@@ -1,0 +1,20 @@
+/* Cải tiến các cards để chúng có chiều cao bằng nhau */
+.card {
+    display: flex;
+    flex-direction: column; /* Đảm bảo các phần trong card sẽ được xếp theo cột */
+    justify-content: space-between; /* Cân bằng khoảng cách giữa phần tử trong card */
+}
+
+/* Đảm bảo các hình ảnh trong card đều có chiều cao đồng đều */
+.card-img-top {
+    height: 200px; /* Đặt chiều cao cố định cho hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh luôn phủ đầy khu vực mà không bị méo */
+}
+
+.card-body {
+    flex-grow: 1; /* Đảm bảo phần nội dung trong card sẽ giãn đều */
+}
+
+.row.g-4 {
+    gap: 30px; /* Khoảng cách giữa các columns */
+}

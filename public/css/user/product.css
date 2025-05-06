@@ -1,0 +1,267 @@
+/* Nút Mua ngay ẩn ban đầu và hiển thị khi di chuột vào ảnh */
+.btn-buy-now {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    opacity: 90%;
+    /* Ẩn nút ban đầu */
+    transition: opacity 0.3s ease;
+}
+
+.card-img-container:hover .btn-buy-now {
+    display: block;
+    /* Hiển thị khi di chuột vào ảnh */
+}
+
+/* Thêm hiệu ứng bao quanh card */
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.card-img-container:hover .card-img-top {
+    transform: scale(1.1);
+    /* Phóng to ảnh khi hover */
+    opacity: 0.5;
+}
+
+.card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 18px !important;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-title:hover {
+    color: #28a745;
+}
+
+#price {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #28a745 !important;
+}
+
+.category-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.small-categories {
+    list-style-type: none;
+    padding-left: 20px;
+    transition: max-height 0.3s ease;
+
+}
+
+.small-category-item {
+    margin-bottom: 5px;
+}
+
+.small-category-item a {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Màu sắc khi danh mục lớn được chọn */
+.category-item.active>a {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Màu sắc khi danh mục nhỏ được chọn */
+.small-category-item.active-small-category a {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Danh mục lớn */
+.category-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Danh mục nhỏ */
+.small-category-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+/* Làm nổi bật danh mục nhỏ khi hover */
+.small-category-item a:hover {
+    color: #28a745;
+}
+
+/* Hiệu ứng khi hover danh mục lớn */
+.category-item:hover {
+    background-color: #f1f1f1;
+}
+.product-price-container {
+    animation: fadeEffect 2s infinite alternate ease-in-out;
+}
+
+@keyframes fadeEffect {
+    0% {
+        opacity: 1;
+        filter: brightness(1); /* Độ sáng bình thường */
+    }
+    50% {
+        opacity: 0.8;
+        filter: brightness(1.2); /* Làm sáng lên một chút */
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1); /* Trở lại độ sáng bình thường */
+    }
+}
+.price-filter {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#price-slider {
+    margin-bottom: 10px;
+}
+
+#min-price,
+#max-price {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Media query để thay đổi thẻ card cho màn hình nhỏ */
+@media (max-width: 767px) {
+    h2 {
+        text-align: center;
+    }
+
+    #products-per-page,
+    #sort-by {
+        appearance: none;
+        /* Loại bỏ mũi tên mặc định */
+        -webkit-appearance: none;
+        /* Cho trình duyệt WebKit (Safari, Chrome) */
+        -moz-appearance: none;
+        /* Cho Firefox */
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%23999" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+        background-size: 12px;
+        font-size: 12px;
+        /* Kích thước mũi tên */
+        padding-right: 30px;
+        /* Chừa khoảng trống cho mũi tên */
+    }
+
+    label {
+        font-size: 12px;
+        /* Thu nhỏ kích thước label */
+    }
+
+    .card {
+        margin-bottom: 5px;
+        /* Giảm khoảng cách dưới mỗi thẻ */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-body {
+        padding: 8px;
+        /* Giảm padding trong body của card */
+        flex-grow: 1;
+        /* Chắc chắn rằng phần body sẽ lấy hết không gian còn lại */
+    }
+
+
+    .text-primary {
+        font-size: 14px;
+        /* Giảm kích thước font cho giá */
+    }
+
+    .card-title {
+        font-size: 14px;
+        /* Kích thước chữ hợp lý cho mobile */
+        font-weight: bold;
+        margin-top: 5px;
+        color: #333;
+        white-space: nowrap;
+        /* Giới hạn chữ trên một dòng */
+        overflow: hidden;
+        /* Ẩn phần chữ thừa */
+        text-overflow: ellipsis;
+        /* Thêm ba dấu chấm khi chữ bị cắt */
+    }
+
+    .card-img-container {
+        padding-top: 75%;
+        /* Giảm tỷ lệ ảnh để phù hợp với màn hình nhỏ */
+        position: relative;
+        width: 100%;
+    }
+
+    .btn-buy-now {
+        padding: 8px 16px;
+        /* Giảm kích thước nút */
+    }
+
+}

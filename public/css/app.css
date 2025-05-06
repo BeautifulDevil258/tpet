@@ -1,0 +1,693 @@
+.image-container img:hover {
+    transform: scale(1.05);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+a{
+    text-decoration: none;
+}
+.toast-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.toast-error {
+    background-color: #dc3545;
+    color: white;
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+    border: 2px solid #28a745;
+}
+
+.navbar {
+    background-color: #212529;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    /* Đảm bảo không có margin thừa */
+    padding: 10px;
+    /* Đảm bảo không có padding thừa */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;  
+    /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
+}
+
+.container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #fff;
+    padding: 8px 25px;
+    /* Giãn ra thêm một chút */
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #28a745;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px;
+    white-space: nowrap;
+    /* Tăng khoảng cách giữa các mục */
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: space-evenly; 
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+    /* Căn giữa các phần tử trong navbar */
+}
+.auth-links {
+    display: flex;             /* Chuyển phần tử thành flex container */
+    flex-direction: column;    /* Xếp các phần tử theo chiều cột */
+    gap: 15px;                 /* Tạo khoảng cách giữa các phần tử */
+    color: white;              /* Đảm bảo màu chữ là trắng */
+}
+.account {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+a .nav-link{
+    text-align: center;
+}
+ /* Khi trỏ vào "Cửa hàng", hiển thị danh mục lớn bên dưới */
+.custom-dropdown:hover > .dropdown-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 200px;
+    z-index: 1000;
+}
+.dropdown-menu li:not(:last-child){
+    border-bottom: 1px solid #ddd;
+}
+/* Khi trỏ vào danh mục lớn, hiển thị danh mục nhỏ bên cạnh */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Khi trỏ vào danh mục nhỏ, hiển thị sản phẩm bên cạnh */
+.dropdown-submenu > .dropdown-menu > .dropdown-submenu > .dropdown-menu {
+    left: 100%;
+    top: 0;
+}
+
+/* Chỉnh sửa phần dropdown */
+.dropdown-menu {
+    background-color: white;  /* Màu nền tối */
+    color: white;                /* Màu chữ trắng */
+    border-radius: 5px;          /* Bo tròn các góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng mờ để phần dropdown nổi bật hơn */
+}
+
+/* Khi hover vào mục trong dropdown */
+.dropdown-item:hover {
+    background-color: #28a745;   /* Màu nền khi hover (màu xanh lá) */
+    color: white;                /* Đảm bảo chữ màu trắng */
+}
+
+/* Màu nền khi mục đang active (được chọn) */
+.dropdown-item.active {
+    background-color: #218838;   /* Màu nền khi mục đang active */
+    color: white;                /* Đảm bảo chữ màu trắng */
+}
+footer {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Wrapper tùy chỉnh riêng cho footer */
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Grid layout riêng cho footer */
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-about, .footer-contact {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Tiêu đề */
+footer h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Nội dung đoạn văn */
+footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+/* Icon Facebook */
+footer .fab {
+    font-size: 1.5rem;
+    color: #3b5998;
+}
+
+/* Mạng xã hội căn hàng ngang */
+.footer-contact .d-flex {
+    margin-top: 10px;
+}
+
+.footer-contact img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Text center dưới cùng */
+footer .text-center {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.search-input {
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.search-button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+
+.search-form {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-item.dropdown {
+    margin-left: 15px;
+}
+#cart {
+    position: relative; /* Đảm bảo rằng position của giỏ hàng được đặt đúng */
+}
+
+#cart-count {
+    position: absolute; /* Đặt vị trí tuyệt đối của số lượng */
+    top: -5px; /* Đẩy lên một chút từ trên */
+    right: -5px; /* Đẩy vào trong một chút từ bên phải */
+    font-size: 0.75rem; /* Tạo kích thước chữ nhỏ hơn nếu cần */
+    width: 20px; /* Điều chỉnh độ rộng */
+    height: 20px; /* Điều chỉnh chiều cao */
+    border-radius: 50%; /* Làm tròn badge */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Đảm bảo footer luôn ở dưới cùng */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Đảm bảo chiều cao là 100% chiều cao của cửa sổ trình duyệt */
+}
+
+main {
+    flex-grow: 1;
+    /* Cho phép main chiếm phần không gian còn lại */
+}element.style {
+    position: fixed;
+    bottom: 29% !important;
+    right: 20px;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+/* Phong cách cho nút mở chatbot */
+#openChatbot {
+    background-color: #28a745;
+    color: white;
+    margin: 10px;
+    position: fixed;
+    bottom: 10%;
+    right: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hiệu ứng hover khi rê chuột vào nút */
+#openChatbot:hover {
+    transform: scale(1.1);
+    /* Phóng to nút */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    /* Tăng hiệu ứng bóng */
+}
+/* Hiệu ứng chữ khi rê chuột */
+#openChatbot:hover .chatbot-logo {
+    color: #f1f1f1;
+    /* Làm sáng màu chữ khi hover */
+}
+
+/* Phong cách cho tin nhắn của người dùng */
+.user-message {
+    background-color: #d1f7d1;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    align-self: flex-end;
+    /* Tin nhắn của người dùng căn phải */
+}
+
+/* Phong cách cho tin nhắn của bot */
+.chatbot-response {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    align-self: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Đảm bảo các tin nhắn của người dùng và bot có khoảng cách rõ ràng */
+#chatbot-body {
+    padding: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #ddd;
+    /* Viền nhẹ quanh phần chat */
+}
+
+/* Giao diện chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    display: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.chatbot-header {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+}
+
+.chatbot-logo {
+    font-size: 18px;
+    background-color: white;
+    color: #ff9800;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/* Nội dung chat */
+.chatbot-body {
+    border: 1px solid #ff9800;
+    padding: 15px;
+    max-height: 350px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+.chatbot-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.chatbot-input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+#sendMessage {
+    padding: 10px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+#sendMessage:hover {
+    background-color: #e68900;
+}
+
+/* Khi hover vào các tin nhắn */
+.chatbot-response:hover,
+.user-message:hover {
+    background-color: #e9ecef;
+}
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.typing-indicator .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 1.4s infinite;
+}
+
+.typing-indicator .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Mess chat */
+/* Định kiểu cho nút Facebook Messenger */
+#openFacebookMessenger {
+    margin: 10px;
+    position: fixed;
+    bottom: 2px;
+    right: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0084ff;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hiệu ứng hover khi rê chuột vào nút */
+#openFacebookMessenger:hover {
+    transform: scale(1.1);
+    /* Phóng to nút */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    /* Tăng hiệu ứng bóng */
+}
+
+/* Thêm biểu tượng Messenger vào nút */
+#openFacebookMessenger i {
+    font-size: 24px;
+    /* Kích thước biểu tượng */
+}
+
+.search-bar {
+    display: none;
+}
+
+.close-btn {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        padding: 5px;
+    }
+    .category-item:first-of-type {
+        margin-top: 40px;
+    }
+    .category-item{
+        margin-top: 10px;
+    }
+    .mobile-menu-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #343a40;
+        background-color: #343a40;
+        margin: 0;
+        /* Đảm bảo không có padding thừa */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .mobile-menu-top .logo {
+        color: #28a745;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .navbar{
+        box-sizing: border-box;  
+    }
+    .navbar-toggler {
+        order: 3; /* Nút toggle nằm dưới */
+    }
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    /* Cập nhật vị trí navbar-collapse */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%; /* Đặt nó ngay dưới nút toggle */
+        right: 0; /* Căn phải */
+        width: 250px; /* Đặt chiều rộng cho menu */
+        height: 100vh; /* Đặt chiều cao của menu */
+        background-color: rgba(52, 58, 64, 0.9); /* Nền mờ */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Đổ bóng ở bên trái */
+        transition: transform 0.3s ease;
+        z-index: 999;
+        display: none; /* Ẩn menu ban đầu */
+    }
+
+    .navbar-collapse.show {
+        display: block; /* Hiển thị khi có lớp 'show' */
+        transform: translateX(0); /* Menu sẽ trượt vào từ bên phải */
+    }
+    
+
+    .navbar-collapse {
+        transform: translateX(
+            100%
+        ); /* Ban đầu menu ở ngoài màn hình bên phải */
+    }
+
+    /* Nút toggle (nút mở menu) */
+    #navbarToggle {
+        font-size: 28px;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Nút đóng */
+    .close-btn {
+        overflow: visible;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none; /* Để hỗ trợ trên Firefox */
+        appearance: none;
+        display: block;
+        outline: none;
+        padding: 0;
+        z-index: 1046;
+        box-shadow: none;
+        touch-action: manipulation;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        top: 0;
+        text-decoration: none;
+        text-align: center;
+        opacity: 0.65;
+        padding: 0 0 18px 10px;
+        color: #fff;
+        font-style: normal;
+        font-size: 28px;
+        font-family: Arial, Baskerville, monospace;
+    }
+
+    #home,
+    #shop,
+    #about,
+    #contact {
+        display: none;
+    }
+
+    .search-bar {
+        display: block;
+        position: fixed;
+        top: 95px;
+        /* Đặt dưới thanh menu */
+        left: 0;
+        right: 0;
+        z-index: 999;
+        padding: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+        align-items: center;
+        /* Khoảng cách giữa thanh menu và thanh tìm kiếm */
+    }
+    .mobile-search {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+    }
+    .mobile-search-button {
+        align-items: center;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+    }
+    .search-input {
+        width: 100%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .search {
+        display: none;
+    }
+
+    .mobile-menu-bottom {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #212529;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .hide {
+        transform: translateY(100%);
+        /* Hide the menu by sliding it down */
+    }
+
+    .mobile-menu-bottom a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        flex: 1;
+        padding: 5px;
+    }
+
+    .mobile-menu-bottom a i {
+        display: block;
+        font-size: 18px;
+    }
+
+    .mobile-menu-bottom a:hover {
+        background-color: #28a745;
+        color: white;
+    }
+    .footer-grid {
+        flex-direction: column;
+    }
+}
